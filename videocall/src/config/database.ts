@@ -1,8 +1,8 @@
 import mongoose from 'mongoose';
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/videocall';
 
 export async function connectDatabase() {
+  const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/videocall';
   try {
     await mongoose.connect(MONGO_URI);
     console.log(`MongoDB Connected: ${mongoose.connection.host}`);
